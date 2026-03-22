@@ -1,0 +1,2526 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ManagedNativeWifi</name>
+    </assembly>
+    <members>
+        <member name="T:ManagedNativeWifi.ActionResult">
+            <summary>
+            Action result
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.ActionResult.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.ActionResult.Success">
+            <summary>
+            The action succeeded.
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.ActionResult.NotConnected">
+            <summary>
+            The action failed because the interface was not connected to a wireless LAN.
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.ActionResult.NotFound">
+            <summary>
+            The action failed because the interface was not found.
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.ActionResult.NotSupported">
+            <summary>
+            The action failed because the function was not supported.
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.ActionResult.OtherError">
+            <summary>
+            The action failed due to other error.
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.AuthenticationAlgorithm">
+            <summary>
+            Authentication algorithm
+            </summary>
+            <remarks>
+            Equivalent to DOT11_AUTH_ALGORITHM:
+            https://learn.microsoft.com/en-us/windows/win32/nativewifi/dot11-auth-algorithm
+            </remarks>
+        </member>
+        <member name="F:ManagedNativeWifi.AuthenticationAlgorithm.Unknown">
+            <summary>
+            Unknown (invalid value)
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.AuthenticationAlgorithm.Open">
+            <summary>
+            802.11 Open System authentication algorithm
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.AuthenticationAlgorithm.Shared">
+            <summary>
+            802.11 Shared Key authentication algorithm that uses pre-shared Wired Equivalent Privacy
+            (WEP) key
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.AuthenticationAlgorithm.WPA">
+            <summary>
+            Wi-Fi Protected Access (WPA) algorithm
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.AuthenticationAlgorithm.WPA_PSK">
+            <summary>
+            WPA algorithm that uses pre-shared keys (PSK)
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.AuthenticationAlgorithm.WPA_NONE">
+            <summary>
+            Note supported
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.AuthenticationAlgorithm.RSNA">
+            <summary>
+            802.11i Robust Security Network Association (RSNA) algorithm (WPA2 is one such algorithm.)
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.AuthenticationAlgorithm.RSNA_PSK">
+            <summary>
+            802.11i RSNA algorithm that uses PSK
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.AuthenticationAlgorithm.WPA3_ENT_192">
+            <summary>
+            WPA3 Enterprise 192-bit mode algorithm (This supersedes WPA3.)
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.AuthenticationAlgorithm.WPA3_ENT">
+            <summary>
+            WPA3 Enterprise algorithm
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.AuthenticationAlgorithm.WPA3_SAE">
+            <summary>
+            WPA3 Simultaneous Authentication of Equals (SAE）algorithm
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.AuthenticationAlgorithm.OWE">
+            <summary>
+            Opportunistic Wireless Encryption (OWE) algorithm
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.AuthenticationAlgorithm.IHV_START">
+            <summary>
+            Start of the range that specifies proprietary authentication algorithms developed by
+            an independent hardware vendor (IHV).
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.AuthenticationAlgorithm.IHV_END">
+            <summary>
+            End of the range that specifies proprietary authentication algorithms developed by
+            an independent hardware vendor (IHV).
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.AuthenticationMethod">
+            <summary>
+            Authentication method to be used to connect to wireless LAN
+            </summary>
+            <remarks>
+            Equivalent to authentication element in profile XML:
+            https://learn.microsoft.com/en-us/windows/win32/nativewifi/wlan-profileschema-authencryption-security-element
+            Some descriptions found in terms of NetworkAuthenticationType:
+            https://learn.microsoft.com/en-us/uwp/api/windows.networking.connectivity.networkauthenticationtype
+            </remarks>
+        </member>
+        <member name="F:ManagedNativeWifi.AuthenticationMethod.Unknown">
+            <summary>
+            Unknown (invalid value)
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.AuthenticationMethod.Open">
+            <summary>
+            Open 802.11 authentication
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.AuthenticationMethod.Shared">
+            <summary>
+            Shared 802.11 authentication
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.AuthenticationMethod.WPA_Enterprise">
+            <summary>
+            WPA-Enterprise 802.11 authentication
+            </summary>
+            <remarks>WPA in profile XML</remarks>
+        </member>
+        <member name="F:ManagedNativeWifi.AuthenticationMethod.WPA_Personal">
+            <summary>
+            WPA-Personal 802.11 authentication
+            </summary>
+            <remarks>WPAPSK in profile XML</remarks>
+        </member>
+        <member name="F:ManagedNativeWifi.AuthenticationMethod.WPA2_Enterprise">
+            <summary>
+            WPA2-Enterprise 802.11 authentication
+            </summary>
+            <remarks>WPA2 in profile XML</remarks>
+        </member>
+        <member name="F:ManagedNativeWifi.AuthenticationMethod.WPA2_Personal">
+            <summary>
+            WPA2-Personal 802.11 authentication
+            </summary>
+            <remarks>WPA2PSK in profile XML</remarks>
+        </member>
+        <member name="F:ManagedNativeWifi.AuthenticationMethod.WPA3_Enterprise_192">
+            <summary>
+            WPA3-Enterprise 192-bit mode 802.11 authentication
+            </summary>
+            <remarks>WPA3ENT192 in profile XML (This supersedes WPA3.)</remarks>
+        </member>
+        <member name="F:ManagedNativeWifi.AuthenticationMethod.WPA3_Enterprise">
+            <summary>
+            WPA3-Enterprise 802.11 authentication
+            </summary>
+            <remarks>WPA3ENT in profile XML</remarks>
+        </member>
+        <member name="F:ManagedNativeWifi.AuthenticationMethod.WPA3_Personal">
+            <summary>
+            WPA3-Personal 802.11 authentication
+            </summary>
+            <remarks>WPA3SAE in profile XML</remarks>
+        </member>
+        <member name="F:ManagedNativeWifi.AuthenticationMethod.OWE">
+            <summary>
+            Opportunistic wireless encryption (OWE) 802.11 authentication
+            </summary>
+            <remarks>OWE in profile XML</remarks>
+        </member>
+        <member name="T:ManagedNativeWifi.AvailabilityChangedEventArgs">
+            <summary>
+            Provides data for the AvailabilityChanged event.
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.AvailabilityChangedEventArgs.InterfaceId">
+            <summary>
+            Associated wireless interface ID
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.AvailabilityChangedEventArgs.ChangedState">
+            <summary>
+            Availability changed state
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.AvailabilityChangedState">
+            <summary>
+            Availability changed state
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.AvailabilityChangedState.Unknown">
+            <summary>
+            Unknown (invalid value)
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.AvailabilityChangedState.Available">
+            <summary>
+            All of the following conditions occur:
+            A connectable wireless LAN is found after a scan.
+            The wireless interface is in the disconnected state.
+            There is no compatible auto-connect profile that can be used to connect.
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.AvailabilityChangedState.Unavailable">
+            <summary>
+            No connectable wireless LAN is found after a scan.
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.AvailableNetworkInfo">
+            <summary>
+            Wireless LAN information on available network
+            </summary>
+            <remarks>
+            Partly equivalent to WLAN_AVAILABLE_NETWORK:
+            https://learn.microsoft.com/en-us/windows/win32/api/wlanapi/ns-wlanapi-wlan_available_network
+            </remarks>
+        </member>
+        <member name="P:ManagedNativeWifi.AvailableNetworkInfo.Ssid">
+            <summary>
+            SSID (maximum 32 bytes)
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.AvailableNetworkInfo.BssType">
+            <summary>
+            BSS network type
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.AvailableNetworkInfo.IsConnectable">
+            <summary>
+            Whether this network is connectable
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.AvailableNetworkInfo.SignalQuality">
+            <summary>
+            Signal quality (0-100)
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.AvailableNetworkInfo.IsSecurityEnabled">
+            <summary>
+            Whether security is enabled on this network
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.AvailableNetworkInfo.ProfileName">
+            <summary>
+            Associated wireless profile name
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.AvailableNetworkInfo.AuthenticationAlgorithm">
+            <summary>
+            Default authentication algorithm to be used to connect to this network for the first time
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.AvailableNetworkInfo.CipherAlgorithm">
+            <summary>
+            Default cipher algorithm to be used to connect to this network
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.AvailableNetworkInfo.#ctor(ManagedNativeWifi.NetworkIdentifier,ManagedNativeWifi.BssType,System.Boolean,System.Int32,System.Boolean,System.String,ManagedNativeWifi.AuthenticationAlgorithm,ManagedNativeWifi.CipherAlgorithm)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.AvailableNetworkPack">
+            <summary>
+            Wireless LAN information on available network
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.AvailableNetworkPack.InterfaceInfo">
+            <summary>
+            Associated wireless interface information
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.AvailableNetworkPack.Interface">
+            <summary>
+            Associated wireless interface information
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.AvailableNetworkPack.#ctor(ManagedNativeWifi.InterfaceInfo,ManagedNativeWifi.NetworkIdentifier,ManagedNativeWifi.BssType,System.Boolean,System.Int32,System.Boolean,System.String,ManagedNativeWifi.AuthenticationAlgorithm,ManagedNativeWifi.CipherAlgorithm)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.AvailableNetworkGroupPack">
+            <summary>
+            Wireless LAN information on available network and group of associated BSS networks
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.AvailableNetworkGroupPack.BssNetworks">
+            <summary>
+            Associated BSS networks information
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.AvailableNetworkGroupPack.PhyType">
+            <summary>
+            PHY type of associated BSS network which has the highest link quality
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.AvailableNetworkGroupPack.LinkQuality">
+            <summary>
+            Link quality of associated BSS network which has the highest link quality
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.AvailableNetworkGroupPack.Frequency">
+            <summary>
+            Channel center frequency (KHz) of associated BSS network which has the highest link quality
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.AvailableNetworkGroupPack.Band">
+            <summary>
+            Frequency band (GHz) of associated BSS network which has the highest link quality
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.AvailableNetworkGroupPack.Channel">
+            <summary>
+            Channel of associated BSS network which has the highest link quality
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.AvailableNetworkGroupPack.#ctor(ManagedNativeWifi.InterfaceInfo,ManagedNativeWifi.NetworkIdentifier,ManagedNativeWifi.BssType,System.Boolean,System.Int32,System.Boolean,System.String,ManagedNativeWifi.AuthenticationAlgorithm,ManagedNativeWifi.CipherAlgorithm,System.Collections.Generic.IEnumerable{ManagedNativeWifi.BssNetworkPack})">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.BssNetworkInfo">
+            <summary>
+            Wireless LAN information on BSS network
+            </summary>
+            <remarks>
+            Partly equivalent to WLAN_BSS_ENTRY:
+            https://learn.microsoft.com/en-us/windows/win32/api/wlanapi/ns-wlanapi-wlan_bss_entry
+            </remarks>
+        </member>
+        <member name="P:ManagedNativeWifi.BssNetworkInfo.Ssid">
+            <summary>
+            SSID (maximum 32 bytes)
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.BssNetworkInfo.BssType">
+            <summary>
+            BSS network type
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.BssNetworkInfo.Bssid">
+            <summary>
+            BSSID (6 bytes)
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.BssNetworkInfo.PhyType">
+            <summary>
+            PHY type
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.BssNetworkInfo.Rssi">
+            <summary>
+            Received Signal Strength Indicator (RSSI) (dBm)
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.BssNetworkInfo.LinkQuality">
+            <summary>
+            Link quality (0-100)
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.BssNetworkInfo.Frequency">
+            <summary>
+            Channel center frequency (KHz)
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.BssNetworkInfo.Band">
+            <summary>
+            Frequency band (GHz)
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.BssNetworkInfo.Channel">
+            <summary>
+            Channel
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.BssNetworkInfo.#ctor(ManagedNativeWifi.NetworkIdentifier,ManagedNativeWifi.BssType,ManagedNativeWifi.NetworkIdentifier,ManagedNativeWifi.PhyType,System.Int32,System.Int32,System.Int32,System.Single,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.BssNetworkPack">
+            <summary>
+            Wireless LAN information on BSS network
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.BssNetworkPack.InterfaceInfo">
+            <summary>
+            Associated wireless interface information
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.BssNetworkPack.Interface">
+            <summary>
+            Associated wireless interface information
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.BssNetworkPack.#ctor(ManagedNativeWifi.InterfaceInfo,ManagedNativeWifi.NetworkIdentifier,ManagedNativeWifi.BssType,ManagedNativeWifi.NetworkIdentifier,ManagedNativeWifi.PhyType,System.Int32,System.Int32,System.Int32,System.Single,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.BssType">
+            <summary>
+            BSS network type
+            </summary>
+            <remarks>
+            Partly equivalent to DOT11_BSS_TYPE:
+            https://learn.microsoft.com/en-us/windows/win32/nativewifi/dot11-bss-type
+            Also equivalent to connectionType element in profile XML:
+            https://learn.microsoft.com/en-us/windows/win32/nativewifi/wlan-profileschema-wlanprofile-element#connectiontype
+            </remarks>
+        </member>
+        <member name="F:ManagedNativeWifi.BssType.None">
+            <summary>
+            None (invalid value)
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.BssType.Infrastructure">
+            <summary>
+            Infrastructure BSS network
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.BssType.Independent">
+            <summary>
+            Independent BSS (IBSS) network (Ad hoc network)
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.BssType.Any">
+            <summary>
+            Either infrastructure or independent BSS network
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.BssTypeConverter.TryConvert(ManagedNativeWifi.Win32.NativeMethod.DOT11_BSS_TYPE,ManagedNativeWifi.BssType@)">
+            <summary>
+            Converts from DOT11_BSS_TYPE value.
+            </summary>
+            <param name="source">DOT11_BSS_TYPE value</param>
+            <param name="bssType">BssType value</param>
+            <returns>True if successfully converts</returns>
+        </member>
+        <member name="M:ManagedNativeWifi.BssTypeConverter.TryParse(System.String,ManagedNativeWifi.BssType@)">
+            <summary>
+            Converts from connectionType element in profile XML.
+            </summary>
+            <param name="source">connectionType element</param>
+            <param name="bssType">BssType value</param>
+            <returns>True if successfully converts</returns>
+        </member>
+        <member name="T:ManagedNativeWifi.CipherAlgorithm">
+            <summary>
+            Cipher algorithm for data encryption and decryption
+            </summary>
+            <remarks>
+            Equivalent to DOT11_CIPHER_ALGORITHM:
+            https://learn.microsoft.com/en-us/windows/win32/nativewifi/dot11-cipher-algorithm
+            </remarks>
+        </member>
+        <member name="F:ManagedNativeWifi.CipherAlgorithm.None">
+            <summary>
+            No cipher algorithm is enabled or supported.
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.CipherAlgorithm.WEP">
+            <summary>
+            Wired Equivalent Privacy (WEP) algorithm with a cipher key of any length
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.CipherAlgorithm.WEP_40">
+            <summary>
+            WEP algorithm with a 40-bit cipher key
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.CipherAlgorithm.WEP_104">
+            <summary>
+            WEP algorithm with a 104-bit cipher key
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.CipherAlgorithm.TKIP">
+            <summary>
+            Temporal Key Integrity Protocol (TKIP) algorithm
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.CipherAlgorithm.CCMP">
+            <summary>
+            AES-CCMP algorithm
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.CipherAlgorithm.BIP">
+            <summary>
+            BIP-CMAC-128 algorithm
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.CipherAlgorithm.GCMP">
+            <summary>
+            GCMP-128 algorithm
+            </summary>	
+        </member>
+        <member name="F:ManagedNativeWifi.CipherAlgorithm.GCMP_256">
+            <summary>
+            GCMP-256 algorithm
+            </summary>	
+        </member>
+        <member name="F:ManagedNativeWifi.CipherAlgorithm.CCMP_256">
+            <summary>
+            CCMP-256 algorithm
+            </summary>	
+        </member>
+        <member name="F:ManagedNativeWifi.CipherAlgorithm.BIP_GMAC_128">
+            <summary>
+            BIP-GMAC-128 algorithm
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.CipherAlgorithm.BIP_GMAC_256">
+            <summary>
+            BIP-GMAC-256 algorithm
+            </summary>	
+        </member>
+        <member name="F:ManagedNativeWifi.CipherAlgorithm.BIP_CMAC_256">
+            <summary>
+            BIP-CMAC-256 algorithm
+            </summary>	
+        </member>
+        <member name="F:ManagedNativeWifi.CipherAlgorithm.WPA_USE_GROUP">
+            <summary>
+            Wi-Fi Protected Access (WPA) Use Group Key cipher suite
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.CipherAlgorithm.RSN_USE_GROUP">
+            <summary>
+            Robust Security Network (RSN) Use Group Key cipher suite (not used)
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.CipherAlgorithm.IHV_START">
+            <summary>
+            Indicates the start of the range that specifies proprietary cipher algorithms developed by an independent hardware vendor (IHV).
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.CipherAlgorithm.IHV_END">
+            <summary>
+            Indicates the end of the range that specifies proprietary cipher algorithms developed by an independent hardware vendor (IHV).
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.Common.DisposableContainer`1">
+            <summary>
+            Container of disposable object
+            </summary>
+            <typeparam name="T">Disposable object type</typeparam>
+            <remarks>
+            If a disposable object is given as content when this container is instantiated,
+            the content object will not be disposed when this container is disposed.
+            In contrast, if no disposable object is given (if it is default, in the case of class, null)
+            as content when this container is instantiated, a new disposable object is instantiated
+            instead and the content object will be disposed when this container is disposed.
+            </remarks>
+        </member>
+        <member name="M:ManagedNativeWifi.Common.HexadecimalHelper.ToBytes(System.String)">
+            <summary>
+            Converts a string which represents a byte array in hexadecimal format to the byte array.
+            </summary>
+            <param name="source">Hexadecimal string</param>
+            <returns>Original byte array</returns>
+            <exception cref="T:System.FormatException">
+            Thrown when the string is not in hexadecimal format.
+            </exception>
+        </member>
+        <member name="M:ManagedNativeWifi.Common.HexadecimalHelper.ToString(System.Byte[])">
+            <summary>
+            Converts a byte array to a string which represents the byte array in hexadecimal format.
+            </summary>
+            <param name="source">Original byte array</param>
+            <returns>Hexadecimal string</returns>
+        </member>
+        <member name="M:ManagedNativeWifi.Common.NameHelper.ToUpperHyphenated(System.String)">
+            <summary>
+            Converts a pascal camel case string to an upper hyphenated string.
+            </summary>
+            <param name="pascalCamelCaseString">Pascal camel case string</param>
+            <returns>Upper hyphenated string</returns>
+            <remarks>
+            For example, CamelCaseString is coverted to CAMEL-CASE-STRING.
+            </remarks>
+        </member>
+        <member name="T:ManagedNativeWifi.ConnectionChangedEventArgs">
+            <summary>
+            Provides data for the ConnectionChanged event.
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ConnectionChangedEventArgs.InterfaceId">
+            <summary>
+            Associated wireless interface ID
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ConnectionChangedEventArgs.ChangedState">
+            <summary>
+            Wireless connection changed state
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ConnectionChangedEventArgs.Data">
+            <summary>
+            Wireless connection notification data
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.ConnectionChangedState">
+            <summary>
+            Wireless connection changed state
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.ConnectionChangedState.Unknown">
+            <summary>
+            Unknown (invalid value)
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.ConnectionChangedState.Started">
+            <summary>
+            A connection attempt has started.
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.ConnectionChangedState.Completed">
+            <summary>
+            A connection has completed.
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.ConnectionChangedState.Failed">
+            <summary>
+            A connection attempt has failed.
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.ConnectionChangedState.Disconnecting">
+            <summary>
+            The current connection is disconnecting.
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.ConnectionChangedState.Disconnected">
+            <summary>
+            The current connection has disconnected.
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.ConnectionNotificationData">
+            <summary>
+            Wireless connection notification data
+            </summary>
+            <remarks>
+            Partly equivalent to WLAN_CONNECTION_NOTIFICATION_DATA structure:
+            https://learn.microsoft.com/en-us/windows/win32/api/wlanapi/ns-wlanapi-wlan_connection_notification_data
+            </remarks>
+        </member>
+        <member name="P:ManagedNativeWifi.ConnectionNotificationData.ConnectionMode">
+            <summary>
+            Connection mode
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ConnectionNotificationData.ProfileName">
+            <summary>
+            Associated wireless profile name
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ConnectionNotificationData.Ssid">
+            <summary>
+            SSID of associated wireless LAN
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ConnectionNotificationData.BssType">
+            <summary>
+            BSS network type of associated wireless LAN
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ConnectionNotificationData.IsSecurityEnabled">
+            <summary>
+            Whether security is enabled on this network
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.ConnectionMode">
+            <summary>
+            Connection mode
+            </summary>
+            <remarks>
+            Equivalent to WLAN_CONNECTION_MODE:
+            https://learn.microsoft.com/en-us/windows/win32/api/wlanapi/ne-wlanapi-wlan_connection_mode
+            </remarks>
+        </member>
+        <member name="F:ManagedNativeWifi.ConnectionMode.Invalid">
+            <summary>
+            Not used.
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.ConnectionMode.Profile">
+            <summary>
+            A profile will be used to make the connection.
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.ConnectionMode.TemporaryProfile">
+            <summary>
+            A temporary profile will be used to make the connection.
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.ConnectionMode.DiscoverySecure">
+            <summary>
+            Secure discovery will be used to make the connection.
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.ConnectionMode.DiscoveryUnsecure">
+            <summary>
+            Unsecure discovery will be used to make the connection.
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.ConnectionMode.Auto">
+            <summary>
+            The connection is initiated by the wireless service automatically using a persistent profile.
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.CurrentConnectionInfo">
+            <summary>
+            Wireless connection information
+            </summary>
+            <remarks>
+            Partly equivalent to WLAN_CONNECTION_ATTRIBUTES:
+            https://learn.microsoft.com/en-us/windows/win32/api/wlanapi/ns-wlanapi-wlan_connection_attributes
+            </remarks>
+        </member>
+        <member name="P:ManagedNativeWifi.CurrentConnectionInfo.InterfaceState">
+            <summary>
+            Interface state
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.CurrentConnectionInfo.ConnectionMode">
+            <summary>
+            Connection mode
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.CurrentConnectionInfo.ProfileName">
+            <summary>
+            Wireless profile name
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.CurrentConnectionInfo.Ssid">
+            <summary>
+            SSID (maximum 32 bytes) 
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.CurrentConnectionInfo.BssType">
+            <summary>
+            BSS network type
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.CurrentConnectionInfo.Bssid">
+            <summary>
+            BSSID (6 bytes)
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.CurrentConnectionInfo.PhyType">
+            <summary>
+            PHY type
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.CurrentConnectionInfo.PhyIndex">
+            <summary>
+            The index of the PHY type
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.CurrentConnectionInfo.SignalQuality">
+            <summary>
+            Signal quality (0-100)
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.CurrentConnectionInfo.RxRate">
+            <summary>
+            Receiving rate (Kbps)
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.CurrentConnectionInfo.TxRate">
+            <summary>
+            Transmission rate (Kbps)
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.CurrentConnectionInfo.IsSecurityEnabled">
+            <summary>
+            Whether security is enabled for this connection
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.CurrentConnectionInfo.IsOneXEnabled">
+            <summary>
+            Whether 802.1X is enabled for this connection
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.CurrentConnectionInfo.AuthenticationAlgorithm">
+            <summary>
+            Authentication algorithm
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.CurrentConnectionInfo.CipherAlgorithm">
+            <summary>
+            Cipher algorithm
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.EapXmlType">
+            <summary>
+            EAP XML profile type
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.EapXmlType.Default">
+            <summary>
+            Default value
+            </summary>
+            <remarks>No constant in Wlanapi.h, but needed for EAP-TLS; seems to indicate local user only</remarks>
+        </member>
+        <member name="F:ManagedNativeWifi.EapXmlType.AllUsers">
+            <summary>
+            Set EAP host data for all users of this profile.
+            </summary>
+            <remarks>Equivalent to WLAN_SET_EAPHOST_DATA_ALL_USERS</remarks>
+        </member>
+        <member name="T:ManagedNativeWifi.EncryptionType">
+            <summary>
+            Data encryption type to be used to connect to wireless LAN
+            </summary>
+            <remarks>
+            Equivalent to encryption element in profile XML:
+            https://learn.microsoft.com/en-us/windows/win32/nativewifi/wlan-profileschema-authencryption-security-element#encryption
+            </remarks>
+        </member>
+        <member name="F:ManagedNativeWifi.EncryptionType.None">
+            <summary>
+            None (valid value)
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.EncryptionType.WEP">
+            <summary>
+            WEP encryption for WEP
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.EncryptionType.TKIP">
+            <summary>
+            TKIP encryption for WPA/WPA2
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.EncryptionType.AES">
+            <summary>
+            AES (CCMP) encryption for WPA/WPA2
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.EncryptionType.GCMP_256">
+            <summary>
+            GCMP-256 encryption for WPA3
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.InterfaceChangedEventArgs">
+            <summary>
+            Provides data for the InterfaceChanged event.
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.InterfaceChangedEventArgs.InterfaceId">
+            <summary>
+            Associated wireless interface ID
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.InterfaceChangedEventArgs.ChangedState">
+            <summary>
+            Interface changed state
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.InterfaceChangedState">
+            <summary>
+            Wireless interface changed state
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.InterfaceChangedState.Unknown">
+            <summary>
+            Unknown (invalid value)
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.InterfaceChangedState.Arrived">
+            <summary>
+            A wireless interface has been added to or enabled.
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.InterfaceChangedState.Removed">
+            <summary>
+            A wireless interface has been removed or disabled.
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.InterfaceInfo">
+            <summary>
+            Wireless interface information
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.InterfaceInfo.Id">
+            <summary>
+            Interface ID
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.InterfaceInfo.Description">
+            <summary>
+            Interface description
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.InterfaceInfo.State">
+            <summary>
+            Interface state
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.InterfaceInfo.#ctor(System.Guid,System.String,ManagedNativeWifi.InterfaceState)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.InterfaceConnectionInfo">
+            <summary>
+            Wireless interface and related connection information
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.InterfaceConnectionInfo.IsRadioOn">
+            <summary>
+            Whether the radio of the wireless interface is on
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.InterfaceConnectionInfo.IsConnected">
+            <summary>
+            Whether the wireless interface is connected to a wireless LAN
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.InterfaceConnectionInfo.#ctor(ManagedNativeWifi.Win32.NativeMethod.WLAN_INTERFACE_INFO,System.Boolean,System.Boolean)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.InterfaceState">
+            <summary>
+            Wireless interface state
+            </summary>
+            <remarks>
+            Equivalent to WLAN_INTERFACE_STATE:
+            https://learn.microsoft.com/en-us/windows/win32/api/wlanapi/ne-wlanapi-wlan_interface_state-r1
+            </remarks>
+        </member>
+        <member name="F:ManagedNativeWifi.InterfaceState.NotReady">
+            <summary>
+            The interface is not ready to operate.
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.InterfaceState.Connected">
+            <summary>
+            The interface is connected to a network.
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.InterfaceState.AdHocNetworkFormed">
+            <summary>
+            The interface is the first node in an ad hoc network. No peer has connected.
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.InterfaceState.Disconnecting">
+            <summary>
+            The interface is disconnecting from the current network.
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.InterfaceState.Disconnected">
+            <summary>
+            The interface is not connected to any network.
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.InterfaceState.Associating">
+            <summary>
+            The interface is attempting to associate with a network.
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.InterfaceState.Discovering">
+            <summary>
+            Auto configuration is discovering the settings for the network.
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.InterfaceState.Authenticating">
+            <summary>
+            The interface is in the process of authenticating.
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.NativeWifi">
+            <summary>
+            A managed implementation of Native Wifi API
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.EnumerateInterfaces">
+            <summary>
+            Enumerates wireless interface information.
+            </summary>
+            <returns>Wireless interface information</returns>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.EnumerateInterfaceConnections">
+            <summary>
+            Enumerates wireless interface and related connection information.
+            </summary>
+            <returns>Wireless interface and related connection information</returns>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.ScanNetworksAsync(System.TimeSpan)">
+            <summary>
+            Asynchronously requests wireless interfaces to scan wireless LANs.
+            </summary>
+            <param name="timeout">Timeout duration</param>
+            <returns>Wireless interface IDs that were successfully scanned before the timeout</returns>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.ScanNetworksAsync(System.TimeSpan,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously requests wireless interfaces to scan wireless LANs.
+            </summary>
+            <param name="timeout">Timeout duration</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Wireless interface IDs that were successfully scanned before the timeout</returns>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.ScanNetworksAsync(ManagedNativeWifi.ScanMode,System.Collections.Generic.IEnumerable{System.Guid},System.TimeSpan,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously requests wireless interfaces to scan wireless LANs.
+            </summary>
+            <param name="mode">Mode to scan</param>
+            <param name="interfaceIds">Wireless interface IDs to specify wireless interfaces when mode is OnlySpecified</param>
+            <param name="timeout">Timeout duration</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Wireless interface IDs that were successfully scanned before the timeout</returns>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.ScanNetworksAsync(ManagedNativeWifi.ScanMode,System.Collections.Generic.IEnumerable{System.Guid},ManagedNativeWifi.NetworkIdentifier,System.TimeSpan,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously requests wireless interfaces to scan wireless LANs.
+            </summary>
+            <param name="mode">Mode to scan</param>
+            <param name="interfaceIds">Wireless interface IDs to specify wireless interfaces when mode is OnlySpecified</param>
+            <param name="ssid">SSID of wireless LAN to be scanned</param>
+            <param name="timeout">Timeout duration</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Wireless interface IDs that were successfully scanned before the timeout</returns>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.EnumerateAvailableNetworkSsids">
+            <summary>
+            Enumerates SSIDs of available wireless LANs.
+            </summary>
+            <returns>SSIDs</returns>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.EnumerateConnectedNetworkSsids">
+            <summary>
+            Enumerates SSIDs of connected wireless LANs.
+            </summary>
+            <returns>SSIDs</returns>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.EnumerateAvailableNetworks">
+            <summary>
+            Enumerates wireless LAN information on available networks.
+            </summary>
+            <returns>Wireless LAN information on available networks</returns>
+            <remarks>
+            If multiple profiles are associated with a same network, there will be multiple entries
+            with the same SSID.
+            </remarks>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.EnumerateAvailableNetworks(System.Guid)">
+            <summary>
+            Enumerates wireless LAN information on available networks associated with a specified
+            wireless interface.
+            </summary>
+            <param name="interfaceId">Wireless interface ID</param>
+            <returns>
+            <para>
+            result: Action result.
+            Success if the interface is found and the function succeeded.
+            Other if the interface is is found or the function failed.
+            </para>
+            <para>list: Wireless LAN information on available networks if succeeded</para>
+            </returns>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.EnumerateAvailableNetworkGroups">
+            <summary>
+            Enumerates wireless LAN information on available networks and group of associated BSS
+            networks.
+            </summary>
+            <returns>Wireless LAN information on available networks and group of associated BSS networks</returns>
+            <remarks>
+            If multiple profiles are associated with a same network, there will be multiple entries with
+            the same SSID.
+            </remarks>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.EnumerateBssNetworks">
+            <summary>
+            Enumerates wireless LAN information on BSS networks.
+            </summary>
+            <returns>Wireless LAN information on BSS networks</returns>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.EnumerateBssNetworks(System.Guid)">
+            <summary>
+            Enumerates wireless LAN information on BSS networks associated with a specified
+            wireless interface. 
+            </summary>
+            <param name="interfaceId">Wireless interface ID</param>
+            <returns>
+            <para>
+            result: Action result.
+            Success if the interface is found and the function succeeded.
+            Other if the interface is is found or the function failed.
+            </para>
+            <para>list: Wireless LAN information on BSS networks if succeeded</para>
+            </returns>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.GetCurrentConnection(System.Guid)">
+            <summary>
+            Gets wireless connection information associated with a specified wireless interface.
+            </summary>
+            <param name="interfaceId">Wireless interface ID</param>
+            <returns>
+            <para>
+            result: Action result.
+            Success if the interface is connected and the function succeeded.
+            Other if the interface is not connected or the function failed.
+            </para>
+            <para>value: Wireless connection information if succeeded</para>
+            </returns>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.GetRssi(System.Guid)">
+            <summary>
+            Gets Received Signal Strength Indicator (RSSI) associated with a specified wireless
+            interface.
+            </summary>
+            <param name="interfaceId">Wireless interface ID</param>
+            <returns>
+            <para>
+            result: Action result.
+            Success if the interface is connected and the function succeeded.
+            Other if the interface is not connected or the function failed.
+            </para>
+            <para>value: RSSI if succeeded</para>
+            </returns>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.GetRealtimeConnectionQuality(System.Guid)">
+            <summary>
+            Gets wireless connection quality information associated with a specified wireless
+            interface.
+            </summary>
+            <param name="interfaceId">Wireless interface ID</param>
+            <returns>
+            <para>
+            result: Action result.
+            Success if the interface is connected and the function succeeded.
+            Other if the interface is not connected or the function failed.
+            </para>
+            <para>value: Wireless connection quality information if succeeded</para>
+            </returns>
+            <remarks>
+            This method is supported on Windows 11 (10.0.26100) or newer.
+            This method does not require location access permissions.
+            </remarks>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.EnumerateProfileNames">
+            <summary>
+            Enumerates wireless profile names in preference order.
+            </summary>
+            <returns>Profile names</returns>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.EnumerateProfiles">
+            <summary>
+            Enumerates wireless profile information in preference order.
+            </summary>
+            <returns>Wireless profile information</returns>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.EnumerateProfileRadios">
+            <summary>
+            Enumerates wireless profile and related radio information in preference order.
+            </summary>
+            <returns>Wireless profile and related radio information</returns>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.SetProfile(System.Guid,ManagedNativeWifi.ProfileType,System.String,System.String,System.Boolean)">
+            <summary>
+            Sets (adds or overwrites) the content of a specified wireless profile.
+            </summary>
+            <param name="interfaceId">Wireless interface ID</param>
+            <param name="profileType">Profile type</param>
+            <param name="profileXml">Profile XML</param>
+            <param name="profileSecurity">Security descriptor for all-user profile</param>
+            <param name="overwrite">Whether to overwrite an existing profile</param>
+            <returns>True if successfully set. False if failed.</returns>
+            <remarks>
+            If the content of the profile XML is not valid, a Win32Exception will be thrown.
+            In such case, check the reason code in the message and see
+            https://learn.microsoft.com/en-us/windows/win32/nativewifi/wlan-reason-code
+            https://technet.microsoft.com/en-us/library/3ed3d027-5ae8-4cb0-ade5-0a7c446cd4f7#BKMK_AppndxE
+            </remarks>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.SetProfileEapXmlUserData(System.Guid,System.String,ManagedNativeWifi.EapXmlType,System.String)">
+            <summary>
+            Sets (add or overwirte) the user data (credentials) for a specified wireless profile.
+            </summary>
+            <param name="interfaceId">Wireless interface ID</param>
+            <param name="profileName">Profile name</param>
+            <param name="eapXmlType">EAP XML type</param>
+            <param name="userDataXml">User data XML</param>
+            <returns>True if successfully set. False if failed.</returns>
+            <remarks>
+            In some cases, this function may return true but fail.
+            This was observed when setting EapXmlType.AllUsers, but the certificate
+            referenced in the EAP XML was installed in the users' store.
+            </remarks>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.SetProfilePosition(System.Guid,System.String,System.Int32)">
+            <summary>
+            Sets the position of a specified wireless profile in preference order.
+            </summary>
+            <param name="interfaceId">Wireless interface ID</param>
+            <param name="profileName">Profile name</param>
+            <param name="position">Position (starting at 0)</param>
+            <returns>True if successfully set. False if failed.</returns>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.RenameProfile(System.Guid,System.String,System.String)">
+            <summary>
+            Renames a specified wireless profile.
+            </summary>
+            <param name="interfaceId">Wireless interface ID</param>
+            <param name="oldProfileName">Old profile name</param>
+            <param name="newProfileName">New profile name</param>
+            <returns>True if successfully renamed. False if failed.</returns>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.DeleteProfile(System.Guid,System.String)">
+            <summary>
+            Deletes a specified wireless profile.
+            </summary>
+            <param name="interfaceId">Wireless interface ID</param>
+            <param name="profileName">Profile name</param>
+            <returns>True if successfully deleted. False if failed.</returns>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.ConnectNetwork(System.Guid,System.String,ManagedNativeWifi.BssType,ManagedNativeWifi.NetworkIdentifier)">
+            <summary>
+            Attempts to connect to the wireless LAN associated with a specified wireless profile.
+            </summary>
+            <param name="interfaceId">Wireless interface ID</param>
+            <param name="profileName">Profile name</param>
+            <param name="bssType">BSS network type</param>
+            <param name="bssid">BSSID of wireless LAN to be connected</param>
+            <returns>True if successfully requested the connection. False if failed.</returns>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.ConnectNetworkAsync(System.Guid,System.String,ManagedNativeWifi.BssType,System.TimeSpan)">
+            <summary>
+            Asynchronously attempts to connect to the wireless LAN associated with a specified wireless
+            profile.
+            </summary>
+            <param name="interfaceId">Wireless interface ID</param>
+            <param name="profileName">Profile name</param>
+            <param name="bssType">BSS network type</param>
+            <param name="timeout">Timeout duration</param>
+            <returns>True if successfully connected. False if failed or timed out.</returns>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.ConnectNetworkAsync(System.Guid,System.String,ManagedNativeWifi.BssType,System.TimeSpan,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously attempts to connect to the wireless LAN associated with a specified wireless
+            profile.
+            </summary>
+            <param name="interfaceId">Wireless interface ID</param>
+            <param name="profileName">Profile name</param>
+            <param name="bssType">BSS network type</param>
+            <param name="timeout">Timeout duration</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>True if successfully connected. False if failed or timed out.</returns>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.ConnectNetworkAsync(System.Guid,System.String,ManagedNativeWifi.BssType,ManagedNativeWifi.NetworkIdentifier,System.TimeSpan,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously attempts to connect to the wireless LAN associated with a specified wireless
+            profile.
+            </summary>
+            <param name="interfaceId">Wireless interface ID</param>
+            <param name="profileName">Profile name</param>
+            <param name="bssType">BSS network type</param>
+            <param name="bssid">BSSID of wireless LAN to be connected</param>
+            <param name="timeout">Timeout duration</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>True if successfully connected. False if failed or timed out.</returns>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.DisconnectNetwork(System.Guid)">
+            <summary>
+            Disconnects from the wireless LAN associated with a specified wireless interface.
+            </summary>
+            <param name="interfaceId">Wireless interface ID</param>
+            <returns>True if successfully requested the disconnection. False if failed.</returns>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.DisconnectNetworkAsync(System.Guid,System.TimeSpan)">
+            <summary>
+            Asynchronously disconnects from the wireless LAN associated with a specified wireless
+            interface.
+            </summary>
+            <param name="interfaceId">Wirelss interface ID</param>
+            <param name="timeout">Timeout duration</param>
+            <returns>True if successfully disconnected. False if failed or timed out.</returns>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.DisconnectNetworkAsync(System.Guid,System.TimeSpan,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously disconnects from the wireless LAN associated with a specified wireless
+            interface.
+            </summary>
+            <param name="interfaceId">Wireless interface ID</param>
+            <param name="timeout">Timeout duration</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>True if successfully disconnected. False if failed or timed out.</returns>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.GetRadio(System.Guid)">
+            <summary>
+            Gets radio information of a specified wireless interface.
+            </summary>
+            <param name="interfaceId">Wireless interface ID</param>
+            <returns>Radio information if succeeded. Null if failed.</returns>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.TurnOnRadio(System.Guid)">
+            <summary>
+            Turns on the radio of a specified wireless interface (software radio state only).
+            </summary>
+            <param name="interfaceId">Wireless interface ID</param>
+            <returns>True if successfully changed radio state. False if failed.</returns>
+            <exception cref="T:System.UnauthorizedAccessException">
+            Thrown when the user is not logged on as a member of Administrators group.
+            </exception>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.TurnOffRadio(System.Guid)">
+            <summary>
+            Turns off the radio of a specified wireless interface (software radio state only).
+            </summary>
+            <param name="interfaceId">Wireless interface ID</param>
+            <returns>True if successfully changed radio state. False if failed.</returns>
+            <exception cref="T:System.UnauthorizedAccessException">
+            Throw when the user is not logged on as a member of Administrators group.
+            </exception>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.IsAutoConfig(System.Guid)">
+            <summary>
+            Checks if automatic configuration of a specified wireless interface is enabled.
+            </summary>
+            <param name="interfaceId">Wireless interface ID</param>
+            <returns>True if enabled. False if disabled or failed to check.</returns>
+        </member>
+        <member name="P:ManagedNativeWifi.NativeWifi.ThrowsOnAnyFailure">
+            <summary>
+            Whether to throw an exception when any failure occurs
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifi.TryDetectBandChannel(System.UInt32,System.Single@,System.Int32@)">
+            <summary>
+            Attempts to detect frequency band and channel from center frequency.
+            </summary>
+            <param name="frequency">Channel center frequency (KHz)</param>
+            <param name="band">Frequency band (GHz)</param>
+            <param name="channel">Channel</param>
+            <returns>True if successfully detected. False if failed.</returns>
+            <remarks>
+            This method is marked as internal for unit test.
+            As for 5GHz, this method may produce a channel number which is not actually in use.
+            Some channel numbers of a band overlap those of the other bands. In such cases,
+            refer frequency band to distinguish them.
+            </remarks>
+        </member>
+        <member name="T:ManagedNativeWifi.NativeWifiPlayer">
+            <summary>
+            An instantiatable implementation of Native Wifi API
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifiPlayer.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="E:ManagedNativeWifi.NativeWifiPlayer.NetworkRefreshed">
+            <summary>
+            Occurs when wireless LAN list is refreshed.
+            </summary>
+        </member>
+        <member name="E:ManagedNativeWifi.NativeWifiPlayer.AvailabilityChanged">
+            <summary>
+            Occurs when availability of a wireless LAN is changed.
+            </summary>
+        </member>
+        <member name="E:ManagedNativeWifi.NativeWifiPlayer.InterfaceChanged">
+            <summary>
+            Occurs when a wireless interface is added/removed/enabled/disabled
+            </summary>
+        </member>
+        <member name="E:ManagedNativeWifi.NativeWifiPlayer.ConnectionChanged">
+            <summary>
+            Occurs when connection of a wireless interface is changed.
+            </summary>
+        </member>
+        <member name="E:ManagedNativeWifi.NativeWifiPlayer.ProfileChanged">
+            <summary>
+            Occurs when a wireless profile or wireless profile name is changed.
+            </summary>
+        </member>
+        <member name="E:ManagedNativeWifi.NativeWifiPlayer.RadioStateChanged">
+            <summary>
+            Occurs when the radio state of a wireless interface is changed.
+            </summary>
+        </member>
+        <member name="E:ManagedNativeWifi.NativeWifiPlayer.SignalQualityChanged">
+            <summary>
+            Occurs when the signal quality for a wireless LAN is changed.
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifiPlayer.Dispose">
+            <summary>
+            Dispose
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifiPlayer.Dispose(System.Boolean)">
+            <summary>
+            Dispose
+            </summary>
+            <param name="disposing">Whether to dispose managed resources</param>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifiPlayer.EnumerateInterfaces">
+            <summary>
+            Enumerates wireless interface information.
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifiPlayer.EnumerateInterfaceConnections">
+            <summary>
+            Enumerates wireless interface and related connection information.
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifiPlayer.ScanNetworksAsync(System.TimeSpan,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously requests wireless interfaces to scan wireless LANs.
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifiPlayer.ScanNetworksAsync(ManagedNativeWifi.ScanMode,System.Collections.Generic.IEnumerable{System.Guid},System.TimeSpan,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously requests wireless interfaces to scan wireless LANs.
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifiPlayer.ScanNetworksAsync(ManagedNativeWifi.ScanMode,System.Collections.Generic.IEnumerable{System.Guid},ManagedNativeWifi.NetworkIdentifier,System.TimeSpan,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously requests wireless interfaces to scan wireless LANs.
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifiPlayer.EnumerateAvailableNetworkSsids">
+            <summary>
+            Enumerates SSIDs of available wireless LANs.
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifiPlayer.EnumerateConnectedNetworkSsids">
+            <summary>
+            Enumerates SSIDs of connected wireless LANs.
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifiPlayer.EnumerateAvailableNetworks">
+            <summary>
+            Enumerates wireless LAN information on available networks.
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifiPlayer.EnumerateAvailableNetworks(System.Guid)">
+            <summary>
+            Enumerates wireless LAN information on available networks associated with a specified
+            wireless interface.
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifiPlayer.EnumerateAvailableNetworkGroups">
+            <summary>
+            Enumerates wireless LAN information on available networks and group of associated BSS
+            networks.
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifiPlayer.EnumerateBssNetworks">
+            <summary>
+            Enumerates wireless LAN information on BSS networks.
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifiPlayer.EnumerateBssNetworks(System.Guid)">
+            <summary>
+            Enumerates wireless LAN information on BSS networks associated with a specified wireless
+            interface.
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifiPlayer.GetCurrentConnection(System.Guid)">
+            <summary>
+            Gets wireless connection information associated with a specified wireless
+            interface.
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifiPlayer.GetRssi(System.Guid)">
+            <summary>
+            Gets Received Signal Strength Indicator (RSSI) associated with a specified wireless
+            interface.
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifiPlayer.GetRealtimeConnectionQuality(System.Guid)">
+            <summary>
+            Gets wireless connection quality information associated with a specified wireless
+            interface.
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifiPlayer.EnumerateProfileNames">
+            <summary>
+            Enumerates wireless profile names in preference order.
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifiPlayer.EnumerateProfiles">
+            <summary>
+            Enumerates wireless profile information in preference order.
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifiPlayer.EnumerateProfileRadios">
+            <summary>
+            Enumerates wireless profile and related radio information in preference order.
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifiPlayer.SetProfile(System.Guid,ManagedNativeWifi.ProfileType,System.String,System.String,System.Boolean)">
+            <summary>
+            Sets (adds or overwrites) the content of a specified wireless profile.
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifiPlayer.SetProfilePosition(System.Guid,System.String,System.Int32)">
+            <summary>
+            Sets the position of a specified wireless profile in preference order.
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifiPlayer.SetProfileEapXmlUserData(System.Guid,System.String,ManagedNativeWifi.EapXmlType,System.String)">
+            <summary>
+            Sets (add or overwirte) the user data (credentials) for a specified wireless profile.
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifiPlayer.RenameProfile(System.Guid,System.String,System.String)">
+            <summary>
+            Renames a specified wireless profile.
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifiPlayer.DeleteProfile(System.Guid,System.String)">
+            <summary>
+            Deletes a specified wireless profile.
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifiPlayer.ConnectNetwork(System.Guid,System.String,ManagedNativeWifi.BssType)">
+            <summary>
+            Attempts to connect to the wireless LAN associated with a specified wireless profile.
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifiPlayer.ConnectNetworkAsync(System.Guid,System.String,ManagedNativeWifi.BssType,System.TimeSpan,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously attempts to connect to the wireless LAN associated with a specified wireless
+            profile.
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifiPlayer.DisconnectNetwork(System.Guid)">
+            <summary>
+            Disconnects from the wireless LAN associated with a specified wireless interface.
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.NativeWifiPlayer.DisconnectNetworkAsync(System.Guid,System.TimeSpan,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously disconnects from the wireless LAN associated with a specified wireless
+            interface.
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.NativeWifiPlayer.ThrowsOnAnyFailure">
+            <summary>
+            Whether to throw an exception when any failure occurs
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.NetworkIdentifier">
+            <summary>
+            Identifier of wireless LAN
+            </summary>
+            <remarks>This class is designed as immutable.</remarks>
+        </member>
+        <member name="M:ManagedNativeWifi.NetworkIdentifier.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="rawString">Raw string</param>
+            <remarks>Raw byte array will be filled with that encoded by UTF-8.</remarks>
+        </member>
+        <member name="M:ManagedNativeWifi.NetworkIdentifier.#ctor(System.Byte[])">
+            <summary>
+            Constructor
+            </summary>
+            <param name="rawBytes">Raw byte array</param>
+            <remarks>Raw string will be left null because byte array cannot always be decoded by UTF-8.</remarks>
+        </member>
+        <member name="M:ManagedNativeWifi.NetworkIdentifier.op_Implicit(System.Net.NetworkInformation.PhysicalAddress)~ManagedNativeWifi.NetworkIdentifier">
+            <summary>
+            Converts <see cref="T:System.Net.NetworkInformation.PhysicalAddress"/> to NetworkIdentifier.
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.NetworkIdentifier.op_Implicit(ManagedNativeWifi.NetworkIdentifier)~System.Net.NetworkInformation.PhysicalAddress">
+            <summary>
+            Converts NetworkIdentifier to <see cref="T:System.Net.NetworkInformation.PhysicalAddress"/>.
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.NetworkIdentifier.ToBytes">
+            <summary>
+            Returns the identifier in byte array.
+            </summary>
+            <returns>Identifier in byte array</returns>
+        </member>
+        <member name="M:ManagedNativeWifi.NetworkIdentifier.ToString">
+            <summary>
+            Returns the identifier in string decoded by UTF-8.
+            </summary>
+            <returns>Identifier in string decoded by UTF-8</returns>
+        </member>
+        <member name="T:ManagedNativeWifi.PhyType">
+            <summary>
+            PHY and media type
+            </summary>
+            <remarks>
+            Equivalent to DOT11_PHY_TYPE:
+            https://learn.microsoft.com/en-us/windows/win32/nativewifi/dot11-phy-type
+            https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/windot11/ne-windot11-_dot11_phy_type
+            </remarks>
+        </member>
+        <member name="F:ManagedNativeWifi.PhyType.Unknown">
+            <summary>
+            Unknown or uninitialized PHY
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.PhyType.Any">
+            <summary>
+            Unknown or uninitialized PHY
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.PhyType.Fhss">
+            <summary>
+            Frequency-hopping spread spectrum (FHSS) PHY
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.PhyType.Dsss">
+            <summary>
+            Direct-sequence spread spectrum (DSSS) PHY
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.PhyType.IrBaseband">
+            <summary>
+            Infrared (IR) baseband PHY
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.PhyType.Ofdm">
+            <summary>
+            Orthogonal frequency division multiplexing (OFDM) 802.11a PHY
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.PhyType.HrDsss">
+            <summary>
+            High-rate DSSS (HRDSSS) 802.11b PHY
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.PhyType.Erp">
+            <summary>
+            Extended-rate (ERP) 802.11g PHY
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.PhyType.Ht">
+            <summary>
+            High-throughput (HT) 802.11n PHY
+            Each 802.11n PHY, whether dual-band or not, is specified as this PHY type.
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.PhyType.Vht">
+            <summary>
+            Very high-throughput (VHT) 802.11ac PHY
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.PhyType.Dmg">
+            <summary>
+            Directional Multi-Gigabit (DMG) 802.11ad PHY
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.PhyType.He">
+            <summary>
+            High Efficiency (HE) 802.11ax PHY
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.PhyType.Eht">
+            <summary>
+            Extremely high-throughput (EHT) 802.11be PHY
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.PhyType.IhvStart">
+            <summary>
+            The start of the range that is used to define proprietary PHY types that are developed by
+            an independent hardware vendor (IHV)
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.PhyType.IhvEnd">
+            <summary>
+            The end of the range that is used to define proprietary PHY types that are developed by
+            an IHV
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.PhyTypeExtension">
+            <summary>
+            PHY and media type extension methods
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.PhyTypeExtension.ToProtocolName(ManagedNativeWifi.PhyType)">
+            <summary>
+            Converts PHY type to the equivalent protocol name.
+            </summary>
+            <param name="phyType">PHY type</param>
+            <returns>Protocol name</returns>
+        </member>
+        <member name="T:ManagedNativeWifi.ProfileChangedEventArgs">
+            <summary>
+            Provides data for the ProfileChanged event.
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfileChangedEventArgs.InterfaceId">
+            <summary>
+            Associated wireless interface ID
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfileChangedEventArgs.ChangedState">
+            <summary>
+            Profile changed state
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.ProfileChangedState">
+            <summary>
+            Wireless profile changed state
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.ProfileChangedState.Unknown">
+            <summary>
+            Unknown (invalid value)
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.ProfileChangedState.Changed">
+            <summary>
+            A change in a profile or the profile list has occurred.
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.ProfileChangedState.NameChanged">
+            <summary>
+            A profile name has changed.
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.ProfileChangedState.Unblocked">
+            <summary>
+            A profile has been unblocked.
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.ProfileChangedState.Blocked">
+            <summary>
+            A profile has been blocked.
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.ProfileDocument">
+            <summary>
+            Container of wireless profile document
+            </summary>
+            <remarks>
+            The elements of profile XML are defined as:
+            https://learn.microsoft.com/en-us/windows/win32/nativewifi/wlan-profileschema-elements
+            </remarks>
+        </member>
+        <member name="F:ManagedNativeWifi.ProfileDocument.Namespace">
+            <summary>
+            Target namespace of profile XML
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfileDocument.Root">
+            <summary>
+            Root element
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfileDocument.Name">
+            <summary>
+            Profile name
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfileDocument.Ssid">
+            <summary>
+            SSID of associated wireless LAN
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfileDocument.BssType">
+            <summary>
+            BSS network type of associated wireless LAN
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfileDocument.Authentication">
+            <summary>
+            Authentication method of associated wireless LAN
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfileDocument.Encryption">
+            <summary>
+            Encryption type of associated wireless LAN
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfileDocument.IsValid">
+            <summary>
+            Whether profile XML is valid
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.ProfileDocument.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="xml">Profile XML</param>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfileDocument.IsAutoConnectEnabled">
+            <summary>
+            Whether automatic connection for this profile is enabled
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfileDocument.IsAutoSwitchEnabled">
+            <summary>
+            Whether automatic switch for this profile is enabled
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfileDocument.Xml">
+            <summary>
+            Profile XML
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.ProfileDocument.Clone">
+            <summary>
+            Creates new instance cloned from this instance by deep copy.
+            </summary>
+            <returns>Cloned instance</returns>
+        </member>
+        <member name="T:ManagedNativeWifi.ProfilePack">
+            <summary>
+            Wireless profile information
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfilePack.InterfaceInfo">
+            <summary>
+            Associated wireless interface information
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfilePack.Interface">
+            <summary>
+            Associated wireless interface information
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfilePack.Name">
+            <summary>
+            Profile name
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfilePack.ProfileType">
+            <summary>
+            Profile type
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfilePack.Document">
+            <summary>
+            Profile XML document
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfilePack.ProfileXml">
+            <summary>
+            Profile XML string
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfilePack.Ssid">
+            <summary>
+            SSID of associated wireless LAN
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfilePack.BssType">
+            <summary>
+            BSS network type of associated wireless LAN
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfilePack.Authentication">
+            <summary>
+            Authentication of associated wireless LAN
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfilePack.Encryption">
+            <summary>
+            Encryption of associated wireless LAN
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfilePack.IsAutomatic">
+            <summary>
+            Whether this profile is set to be automatically connected
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfilePack.Position">
+            <summary>
+            Position in preference order of associated wireless interface
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.ProfilePack.#ctor(ManagedNativeWifi.InterfaceInfo,System.String,ManagedNativeWifi.ProfileType,System.String,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.ProfileRadioPack">
+            <summary>
+            Wireless profile and related radio information
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfileRadioPack.InterfaceInfo">
+            <summary>
+            Associated wireless interface and associated information
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfileRadioPack.Interface">
+            <summary>
+            Associated wireless interface and associated information
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfileRadioPack.IsRadioOn">
+            <summary>
+            Whether radio of associated wireless interface is on
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfileRadioPack.IsConnected">
+            <summary>
+            Whether associated wireless interface is connected to associated wireless LAN
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfileRadioPack.PhyType">
+            <summary>
+            PHY type of associated wireless LAN
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfileRadioPack.SignalQuality">
+            <summary>
+            Signal quality of associated wireless LAN
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfileRadioPack.LinkQuality">
+            <summary>
+            Link quality of associated wireless LAN
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfileRadioPack.Frequency">
+            <summary>
+            Channel center frequency (KHz) of associated wireless LAN
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfileRadioPack.Band">
+            <summary>
+            Frequency band (GHz) of associated wireless LAN
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.ProfileRadioPack.Channel">
+            <summary>
+            Channel of associated wireless LAN
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.ProfileRadioPack.#ctor(ManagedNativeWifi.InterfaceConnectionInfo,System.String,System.Boolean,ManagedNativeWifi.ProfileType,System.String,System.Int32,ManagedNativeWifi.PhyType,System.Int32,System.Int32,System.Int32,System.Single,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.ProfileType">
+            <summary>
+            Wireless profile type
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.ProfileType.AllUser">
+            <summary>
+            All-user profile
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.ProfileType.GroupPolicy">
+            <summary>
+            Group policy profile
+            </summary>
+            <remarks>Equivalent to WLAN_PROFILE_GROUP_POLICY</remarks>
+        </member>
+        <member name="F:ManagedNativeWifi.ProfileType.PerUser">
+            <summary>
+            Per-user profile
+            </summary>
+            <remarks>Equivalent to WLAN_PROFILE_USER</remarks>
+        </member>
+        <member name="T:ManagedNativeWifi.RadioInfo">
+            <summary>
+            Radio information
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.RadioInfo.RadioStates">
+            <summary>
+            Radio state information
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.RadioInfo.#ctor(System.Collections.Generic.IEnumerable{ManagedNativeWifi.RadioStateSet})">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.RadioStateChangedEventArgs">
+            <summary>
+            Provides data for the RadioStateChanged event.
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.RadioStateChangedEventArgs.InterfaceId">
+            <summary>
+            Associated wireless interface ID
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.RadioStateChangedEventArgs.RadioState">
+            <summary>
+            Radio state information
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.RadioStateSet">
+            <summary>
+            Radio state information
+            </summary>
+            <remarks>
+            Partly equivalent to WLAN_PHY_RADIO_STATE:
+            https://learn.microsoft.com/en-us/windows/win32/api/wlanapi/ns-wlanapi-wlan_phy_radio_state
+            </remarks>
+        </member>
+        <member name="P:ManagedNativeWifi.RadioStateSet.PhyType">
+            <summary>
+            PHY type
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.RadioStateSet.IsHardwareOn">
+            <summary>
+            Whether hardware radio state is on
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.RadioStateSet.IsSoftwareOn">
+            <summary>
+            Whether software radio state is on
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.RadioStateSet.IsOn">
+            <summary>
+            Whether radio state is on
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.RadioStateSet.#ctor(ManagedNativeWifi.PhyType,System.Boolean,System.Boolean)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="phyType">PHY type</param>
+            <param name="isHardwareOn">Whether hardware state is on</param>
+            <param name="isSoftwareOn">Whether software state is on</param>
+        </member>
+        <member name="T:ManagedNativeWifi.RealtimeConnectionQualityInfo">
+            <summary>
+            Wireless connection quality information
+            </summary>
+            <remarks>
+            Partly equivalent to WLAN_REALTIME_CONNECTION_QUALITY:
+            https://learn.microsoft.com/en-us/windows/win32/api/wlanapi/ns-wlanapi-wlan_realtime_connection_quality
+            </remarks>
+        </member>
+        <member name="P:ManagedNativeWifi.RealtimeConnectionQualityInfo.PhyType">
+            <summary>
+            PHY type
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.RealtimeConnectionQualityInfo.LinkQuality">
+            <summary>
+            Link quality (0-100)
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.RealtimeConnectionQualityInfo.RxRate">
+            <summary>
+            Receiving rate (Kbps)
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.RealtimeConnectionQualityInfo.TxRate">
+            <summary>
+            Transmission rate (Kbps)
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.RealtimeConnectionQualityInfo.IsMultiLinkOperation">
+            <summary>
+            Whether this is a Multi-Link Operation (MLO) connection
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.RealtimeConnectionQualityInfo.Links">
+            <summary>
+            Link information for radio links in this connection
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.RealtimeConnectionQualityLinkInfo">
+            <summary>
+            Link information for a radio link in wireless connection quality information
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.RealtimeConnectionQualityLinkInfo.LinkId">
+            <summary>
+            Link ID
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.RealtimeConnectionQualityLinkInfo.Rssi">
+            <summary>
+            Received Signal Strength Indicator (RSSI) (dBm)
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.RealtimeConnectionQualityLinkInfo.Frequency">
+            <summary>
+            Channel center frequency (MHz)
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.RealtimeConnectionQualityLinkInfo.Bandwidth">
+            <summary>
+            Bandwidth (MHz)
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.ScanMode">
+            <summary>
+            Modes to scan wireless LANs
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.ScanMode.None">
+            <summary>
+            Default
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.ScanMode.All">
+            <summary>
+            All wireless interfaces are requested to scan.
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.ScanMode.OnlyNotConnected">
+            <summary>
+            Only wireless interfaces that are not connected to wireless LANs, are requested to scan.
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.ScanMode.OnlySpecified">
+            <summary>
+            Only wireless interfaces that are specified, are requested to scan.
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.SignalQualityChangedEventArgs">
+            <summary>
+            Provides data for the SignalQualityChanged event.
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.SignalQualityChangedEventArgs.InterfaceId">
+            <summary>
+            Associated wireless interface ID
+            </summary>
+        </member>
+        <member name="P:ManagedNativeWifi.SignalQualityChangedEventArgs.SignalQuality">
+            <summary>
+            New signal quality (0-100)
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.Win32.BaseMethod.WlanNotificationClient.Register(ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_SOURCE)">
+            <summary>
+            Registers or appends notification source.
+            </summary>
+            <param name="notificationSource">Notification sources</param>
+        </member>
+        <member name="M:ManagedNativeWifi.Win32.BaseMethod.WlanNotificationClient.Unregister">
+            <summary>
+            Unregister notification source.
+            </summary>
+        </member>
+        <member name="M:ManagedNativeWifi.Win32.NativeMethod.DOT11_SSID.ToBytes">
+            <summary>
+            Returns the byte array of SSID.
+            </summary>
+            <returns>Byte array</returns>
+        </member>
+        <member name="M:ManagedNativeWifi.Win32.NativeMethod.DOT11_SSID.ToString">
+            <summary>
+            Returns the string representation of SSID decoded by UTF-8.
+            </summary>
+            <returns>String representation of SSID if successfully decoded by UTF-8 from the byte array of SSID. Null if failed.</returns>
+        </member>
+        <member name="M:ManagedNativeWifi.Win32.NativeMethod.DOT11_MAC_ADDRESS.ToBytes">
+            <summary>
+            Returns the byte array of MAC address
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ManagedNativeWifi.Win32.NativeMethod.DOT11_MAC_ADDRESS.ToString">
+            <summary>
+            Returns the hexadecimal string representation of MAC address delimited by colon.
+            </summary>
+            <returns>Hexadecimal string</returns>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.DOT11_BSS_TYPE.dot11_BSS_type_infrastructure">
+            <summary>
+            Infrastructure BSS network
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.DOT11_BSS_TYPE.dot11_BSS_type_independent">
+            <summary>
+            Independent BSS (IBSS) network
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.DOT11_BSS_TYPE.dot11_BSS_type_any">
+            <summary>
+            Either infrastructure or IBSS network
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_ACM">
+            <summary>
+            WLAN_NOTIFICATION_ACM enumeration:
+            https://learn.microsoft.com/en-us/windows/win32/api/wlanapi/ne-wlanapi-wlan_notification_acm-r1
+            </summary>
+            <remarks>
+            The descriptions are given at WLAN_NOTIFICATION_DATA structure:
+            https://learn.microsoft.com/en-us/previous-versions/windows/desktop/legacy/ms706902(v=vs.85) 
+            </remarks>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_ACM.wlan_notification_acm_autoconf_enabled">
+            <summary>
+            <para>Autoconfiguration is enabled.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_ACM.wlan_notification_acm_autoconf_disabled">
+            <summary>
+            <para>Autoconfiguration is disabled.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_ACM.wlan_notification_acm_background_scan_enabled">
+            <summary>
+            <para>Background scans are enabled.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_ACM.wlan_notification_acm_background_scan_disabled">
+            <summary>
+            <para>Background scans are disabled.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_ACM.wlan_notification_acm_bss_type_change">
+            <summary>
+            <para>The BSS type for an interface has changed.</para>
+            <para>The pData member points to a DOT11_BSS_TYPE enumeration value that identifies
+            the new basic service set (BSS) type.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_ACM.wlan_notification_acm_power_setting_change">
+            <summary>
+            <para>The power setting for an interface has changed.</para>
+            <para>The pData member points to a WLAN_POWER_SETTING enumeration value that
+            identifies the new power setting of an interface.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_ACM.wlan_notification_acm_scan_complete">
+            <summary>
+            <para>A scan for networks has completed.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_ACM.wlan_notification_acm_scan_fail">
+            <summary>
+            <para>A scan for connectable networks failed.</para>
+            <para>The pData member points to a WLAN_REASON_CODE data type value that identifies
+            the reason the WLAN operation failed.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_ACM.wlan_notification_acm_connection_start">
+            <summary>
+            <para>A connection has started to a network in range.</para>
+            <para>The pData member points to a WLAN_CONNECTION_NOTIFICATION_DATA structure that
+            identifies the network information for the connection attempt.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_ACM.wlan_notification_acm_connection_complete">
+            <summary>
+            <para>A connection has completed.</para>
+            <para>The pData member points to a WLAN_CONNECTION_NOTIFICATION_DATA structure that
+            identifies the network information for the connection attempt that completed.
+            The connection succeeded if the wlanReasonCode in WLAN_CONNECTION_NOTIFICATION_DATA
+            is WLAN_REASON_CODE_SUCCESS. Otherwise, the connection has failed.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_ACM.wlan_notification_acm_connection_attempt_fail">
+            <summary>
+            <para>A connection attempt has failed.</para>
+            <para>A connection consists of one or more connection attempts. An application may
+            receive zero or more wlan_notification_acm_connection_attempt_fail notifications
+            between receiving the wlan_notification_acm_connection_start notification and
+            the wlan_notification_acm_connection_complete notification.</para>
+            <para>The pData member points to a WLAN_CONNECTION_NOTIFICATION_DATA structure that
+            identifies the network information for the connection attempt that failed.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_ACM.wlan_notification_acm_filter_list_change">
+            <summary>
+            <para>A change in the filter list has occurred, either through group policy or
+            a call to the WlanSetFilterList function.</para>
+            <para>An application can call the WlanGetFilterList function to retrieve the new
+            filter list.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_ACM.wlan_notification_acm_interface_arrival">
+            <summary>
+            <para>A wireless LAN interface has been added to or enabled on the local computer.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_ACM.wlan_notification_acm_interface_removal">
+            <summary>
+            <para>A wireless LAN interface has been removed or disabled on the local computer.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_ACM.wlan_notification_acm_profile_change">
+            <summary>
+            <para>A change in a profile or the profile list has occurred, either through group
+            policy or by calls to Native Wifi functions.</para>
+            <para>An application can call the WlanGetProfileList and WlanGetProfile functions
+            to retrieve the updated profiles. The interface on which the profile list changes
+            is identified by the InterfaceGuid member.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_ACM.wlan_notification_acm_profile_name_change">
+            <summary>
+            <para>A profile name has changed, either through group policy or by calls to Native
+            Wifi functions.</para>
+            <para>The pData member points to a buffer that contains two NULL-terminated WCHAR
+            strings, the old profile name followed by the new profile name.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_ACM.wlan_notification_acm_profiles_exhausted">
+            <summary>
+            <para>All profiles were exhausted in an attempt to autoconnect.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_ACM.wlan_notification_acm_network_not_available">
+            <summary>
+            <para>The wireless service cannot find any connectable network after a scan.</para>
+            <para>The interface on which no connectable network is found is identified by
+            the InterfaceGuid member.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_ACM.wlan_notification_acm_network_available">
+            <summary>
+            <para>The wireless service found a connectable network after a scan, the interface
+            was in the disconnected state, and there is no compatible auto-connect profile that
+            the wireless service can use to connect.</para>
+            <para>The interface on which connectable networks are found is identified by
+            the InterfaceGuid member.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_ACM.wlan_notification_acm_disconnecting">
+            <summary>
+            <para>The wireless service is disconnecting from a connectable network.</para>
+            <para>The pData member points to a WLAN_CONNECTION_NOTIFICATION_DATA structure that
+            identifies the network information for the connection that is disconnecting.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_ACM.wlan_notification_acm_disconnected">
+            <summary>
+            <para>The wireless service has disconnected from a connectable network.</para>
+            <para>The pData member points to a WLAN_CONNECTION_NOTIFICATION_DATA structure that
+            identifies the network information for the connection that disconnected.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_ACM.wlan_notification_acm_adhoc_network_state_change">
+            <summary>
+            <para>A state change has occurred for an adhoc network.</para>
+            <para>The pData member points to a WLAN_ADHOC_NETWORK_STATE enumeration value that
+            identifies the new adhoc network state.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_ACM.wlan_notification_acm_screen_power_change">
+            <summary>
+            <para>The screen power has changed.</para>
+            <para>The pData member points to a BOOL value that indicates the value of the screen
+            power change. When this value is TRUE, the screen changed to on. When this value is
+            FALSE, the screen changed to off.</para>
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_MSM">
+            <summary>
+            WLAN_NOTIFICATION_MSM enumeration:
+            https://learn.microsoft.com/en-us/windows/win32/api/wlanapi/ne-wlanapi-wlan_notification_msm-r1
+            </summary>
+            <remarks>
+            The descriptions are given at WLAN_NOTIFICATION_DATA structure:
+            https://learn.microsoft.com/en-us/previous-versions/windows/desktop/legacy/ms706902(v=vs.85)
+            </remarks>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_MSM.wlan_notification_msm_associating">
+            <summary>
+            <para>A wireless device is in the process of associating with an access point or
+            a peer station.</para>
+            <para>The pData member points to a WLAN_MSM_NOTIFICATION_DATA structure that contains
+            connection-related information</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_MSM.wlan_notification_msm_associated">
+            <summary>
+            <para>The wireless device has associated with an access point or a peer station.</para>
+            <para>The pData member points to a WLAN_MSM_NOTIFICATION_DATA structure that contains
+            connection-related information.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_MSM.wlan_notification_msm_authenticating">
+            <summary>
+            <para>The wireless device is in the process of authenticating.</para>
+            <para>The pData member of the WLAN_NOTIFICATION_DATA structure points to
+            a WLAN_MSM_NOTIFICATION_DATA structure that contains connection-related information.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_MSM.wlan_notification_msm_connected">
+            <summary>
+            <para>The wireless device is associated with an access point or a peer station, keys
+            have been exchanged, and the wireless device is available to send data.</para>
+            <para>The pData member points to a WLAN_MSM_NOTIFICATION_DATA structure that contains
+            connection-related information.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_MSM.wlan_notification_msm_roaming_start">
+            <summary>
+            <para>The wireless device is connected to an access point and has initiated roaming to
+            another access point.</para>
+            <para>The pData member points to a WLAN_MSM_NOTIFICATION_DATA structure that contains
+            connection-related information.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_MSM.wlan_notification_msm_roaming_end">
+            <summary>
+            <para>The wireless device was connected to an access point and has completed roaming
+            to another access point.</para>
+            <para>The pData member points to a WLAN_MSM_NOTIFICATION_DATA structure that contains
+            connection-related information.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_MSM.wlan_notification_msm_radio_state_change">
+            <summary>
+            <para>The radio state for an adapter has changed. Each physical layer (PHY) has its
+            own radio state. The radio for an adapter is switched off when the radio state of
+            every PHY is off.</para>
+            <para>The pData member points to a WLAN_PHY_RADIO_STATE structure that identifies
+            the new radio state.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_MSM.wlan_notification_msm_signal_quality_change">
+            <summary>
+            <para>A signal quality change for the currently associated access point or peer
+            station.</para>
+            <para>The pData member points to a ULONG value for the WLAN_SIGNAL_QUALITY that
+            identifies the new signal quality.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_MSM.wlan_notification_msm_disassociating">
+            <summary>
+            <para>A wireless device is in the process of disassociating from an access point or
+            a peer station.</para>
+            <para>The pData member points to a WLAN_MSM_NOTIFICATION_DATA structure that contains
+            connection-related information.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_MSM.wlan_notification_msm_disconnected">
+            <summary>
+            <para>The wireless device is not associated with an access point or a peer station.</para>
+            <para>The pData member points to a WLAN_MSM_NOTIFICATION_DATA structure that contains
+            connection-related information. The wlanReasonCode member of
+            the WLAN_MSM_NOTIFICATION_DATA structure indicates the reason for the disconnect.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_MSM.wlan_notification_msm_peer_join">
+            <summary>
+            <para>A peer has joined an adhoc network.</para>
+            <para>The pData member points to a WLAN_MSM_NOTIFICATION_DATA structure that contains
+            connection-related information.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_MSM.wlan_notification_msm_peer_leave">
+            <summary>
+            <para>A peer has left an adhoc network.</para>
+            <para>The pData member of the WLAN_NOTIFICATION_DATA structure points to
+            a WLAN_MSM_NOTIFICATION_DATA structure that contains connection-related information.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_MSM.wlan_notification_msm_adapter_removal">
+            <summary>
+            <para>A wireless adapter has been removed from the local computer.</para>
+            <para>The pData member points to a WLAN_MSM_NOTIFICATION_DATA structure that contains
+            connection-related information.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_MSM.wlan_notification_msm_adapter_operation_mode_change">
+            <summary>
+            <para>The operation mode of the wireless device has changed.</para>
+            <para>The pData member points to a ULONG that identifies the new operation mode.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_MSM.wlan_notification_msm_link_degraded">
+            <summary>
+            <para>The current link quality has degraded, but the system has not yet disconnected
+            or reconnected.</para>
+            </summary>
+        </member>
+        <member name="F:ManagedNativeWifi.Win32.NativeMethod.WLAN_NOTIFICATION_MSM.wlan_notification_msm_link_improved">
+            <summary>
+            <para>The link quality of the current Wi-Fi connection has improved after a previous
+            degradation, without a disconnection.</para>
+            </summary>
+        </member>
+        <member name="T:ManagedNativeWifi.Win32.SafeClientHandle">
+            <summary>
+            Wrapper class only for handle taken by WlanOpenHandle function in Native Wifi API
+            </summary>
+            <remarks>
+            This implementation is based on:
+            http://referencesource.microsoft.com/#mscorlib/system/runtime/interopservices/safehandle.cs
+            </remarks>
+        </member>
+        <member name="M:ManagedNativeWifi.Win32.SafeClientHandle.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+            <remarks>This constructor is for P/Invoke.</remarks>
+        </member>
+    </members>
+</doc>
